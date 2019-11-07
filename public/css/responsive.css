@@ -25,11 +25,11 @@
 @media only screen and (max-width: 992px) {
     .navbar-brand img {
         width: 115px;
-    } 
+    }
     .navbar-brand {
         margin: 0 1rem;
     }
-    
+
     .btn-menu-collapse{
         margin-right: 10px !important;
     }
@@ -52,14 +52,14 @@
 }
 
 .navbar-collapse{
-    
+
     position: absolute;
     background: rgba(0, 0, 0, 0.5);
     left: 0;
     top: 0;
     z-index: 100;
     height: 100vh;
-    width: 0;  
+    width: 0;
 }
 .navbar-collapse ul{
     background: #f6f6f6;
@@ -98,7 +98,7 @@
     background-color: transparent;
 }
 .navbar-collapse ul li:last-child a{
-    color: #fff !important;
+    color: #000 !important;
 }
 
 .navbar-collapse ul li.active{
@@ -121,7 +121,7 @@
     }
     h1{
         font-size: 42px;
-    } 
+    }
     .card{
         margin: 10px 0;
     }
@@ -131,7 +131,7 @@
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px){
-  
+
 }
 @media only screen and (min-width: 575px) and (max-width: 992px){
     .group-btn button{
@@ -148,18 +148,18 @@
     .form-group{
         margin: 10px 0;
     }
-      
+
     footer .form-control{
         padding-left: 0.75rem;
         padding-right: 0.75rem;
     }
-     
+
 }
 @media only screen and (max-width: 575px) {
 
-   
+
     .top_nav ul li a,
-    .top_nav ul, 
+    .top_nav ul,
     .top_nav .social {
         margin: 0;
         place-content: center !important;
@@ -168,13 +168,12 @@
     .top_nav .social li a {
         margin: 5px;
     }
-    
+
     header .site-descp{
-        margin-top: 15px;   
+        margin-top: 15px;
        }
     header img{
         display: none;
     }
-    
+
 }
- 

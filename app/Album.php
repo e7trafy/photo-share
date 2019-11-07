@@ -11,7 +11,7 @@ class Album extends Model
             'name', 'user_id', 'privacy'
         ];
 
-    public function author()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
@@ -20,7 +20,7 @@ class Album extends Model
     {
         return $this->hasMany(Photo::class);
     }
-    public function privacy(){
-        return $this->where('privacy',1);
+    static function privacy(){
+        return Album::where('privacy',1);
     }
 }
