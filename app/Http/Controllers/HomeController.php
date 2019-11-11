@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -38,4 +40,29 @@ class HomeController extends Controller
         $user = User::with('albums.photos')->findOrFail($id);
         return view('site.profile.index', compact('user'));
     }
+
+
+    public function profileUpdate(\App\Http\Requests\Site\Users\Update $request){
+        $user = User::findOrFail(auth()->user()->id);
+        $array = [];
+        if($request->email != $user->email){
+            $email = User::where('email' , $request->email)->first();
+            if($email == null){
+                $array['email'] =  $request->email;
+            }
+        }
+        if($request->name != $user->name){
+            $array['name'] =  $request->name;
+        }
+        if($request->password != ''){
+            $array['password'] =  Hash::make($request->password);
+        }
+        if(!empty($array)){
+            $user->update($array);
+        }
+
+        return redirect()->route('site.profile' , ['id' => $user->id]);
+    }
+
+
 }
